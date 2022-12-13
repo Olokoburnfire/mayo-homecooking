@@ -1,43 +1,38 @@
-import Homepage from './pages/home';
-import './index.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Categories from './pages/categories';
-import Blogs from './pages/blog';
-import Cart from './pages/cart';
-import Faqs from './pages/faq';
-import Search from './pages/search';
-import Login from './components/miscellaneous/login';
-import Signup from './components/miscellaneous/signup';
-import Dashboard from './pages/Dashboard';
-import RequestPage from './pages/Request-Made';
-import Order from './pages/Order';
-import AddressPage from './pages/Address';
-import Payment from './pages/Payment';
-import AccountDetails from './pages/AccountDetail';
+/* eslint-disable no-unused-vars */
+import "./App.css";
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
+const Home = lazy(() => import("./Pages/HomePage"));
+const Category = lazy(() => import("./Pages/categories"));
+const Blog = lazy(() => import("./Pages/Blog"));
+const Faqs = lazy(() => import("./Pages/Faqs"));
+const Search = lazy(() => import("./Pages/Search"));
+const Cart = lazy(() => import("./Pages/Cart"));
+// Correction is to be made here
+const Login = lazy(() => import("./Components/Login and Registration/login"));
+const signup = lazy(() => import("./Components/Login and Registration/signup"));
+const ForgotPassword = lazy(() =>
+  import("./Components/Login and Registration/ForgotPassword")
+);
 
 function App() {
   return (
-    <div className="">
-      {/* For the navigation bar */}
+    <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path='/' element= {<Homepage/> }/>
-          <Route path='/categories' element= {<Categories/> }/>
-          <Route path='/blog' element= {<Blogs/> }/>
-          <Route path='/cart' element= {<Cart/> }/>
-          <Route path='/faq' element= {<Faqs/> }/>
-          <Route path='/search' element= {<Search/> }/>
-          <Route path='/login' element= {<Login/> }/>
-          <Route path='/signup' element= {<Signup/> }/>
-          <Route path='/dashboard' element= {<Dashboard/> }/>
-          <Route path='/request' element= {<RequestPage/> }/>
-          <Route path='/order' element= {<Order/> }/>
-          <Route path='/address' element= {<AddressPage/> }/>
-          <Route path='/payment-method' element= {<Payment/> }/>
-          <Route path='/account-details' element= {<AccountDetails/> }/>
-        </Routes>
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/category" element={<Category />} />
+            <Route path="/faq" element={<Faqs />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<signup />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </div>
   );
