@@ -9,12 +9,14 @@ module.exports = {
         "banner-texture": "url(' /src/Assets/backgrounds/banner_textile.png')",
         "portrait-texture": "url(' /src/Assets/backgrounds/Ellipse 10.png')",
         "subTitle-texture": "url(' /src/Assets/backgrounds/Ellipse 21.png')",
-        "cat-nav-texture": "url(' /src/Assets/backgrounds/cat_nav_texture.png')",
+        "cat-nav-texture":
+          "url(' /src/Assets/backgrounds/cat_nav_texture.png')",
+        "post-header-texture": "url(' /src/Assets/backgrounds/spices.jpg')",
       },
-      backgroundSize:{
+      backgroundSize: {
         "95%": "95%",
         "100%": "100%",
-      }
+      },
     },
   },
   plugins: [],
