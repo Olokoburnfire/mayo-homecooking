@@ -2,7 +2,6 @@
 import React from "react";
 import Navbar from "../../Components/Header-components/Nav-bar/secondNavBar";
 import { useLocation, Link } from "react-router-dom";
-import useBreadcrumbs from "use-react-router-breadcrumbs";
 
 const CategoryNavigation = () => {
   return (
