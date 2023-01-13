@@ -77,7 +77,6 @@ const SignupForm = ({ handleChange }) => {
                   as={TextField}
                   id="name"
                   variant="filled"
-                  fullWidth
                   required
                   style={inputStyle}
                   label="NAME"
@@ -89,7 +88,6 @@ const SignupForm = ({ handleChange }) => {
                   as={TextField}
                   id="email"
                   variant="filled"
-                  fullWidth
                   required
                   style={inputStyle}
                   label="EMAIL ADDRESS"
@@ -102,7 +100,6 @@ const SignupForm = ({ handleChange }) => {
                   as={TextField}
                   id="pwd"
                   variant="filled"
-                  fullWidth
                   required
                   type="password"
                   style={inputStyle}
@@ -116,7 +113,6 @@ const SignupForm = ({ handleChange }) => {
                   as={TextField}
                   id="confirmPwd"
                   variant="filled"
-                  fullWidth
                   required
                   type="password"
                   style={inputStyle}

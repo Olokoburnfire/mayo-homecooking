@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./testimonial-carousel.css";
+import "./HeroCarousel.css";
 
-const Carousel = ({ children }) => {
+const HeroCarousel = ({ children }) => {
   const [counter, setCounter] = useState(1);
   const [pause, setPause] = useState(false);
   const content = children;
@@ -11,14 +11,6 @@ const Carousel = ({ children }) => {
       setCounter(counter + 1);
     } else {
       setCounter(1);
-    }
-  };
-
-  const handlePre = () => {
-    if (counter !== 1) {
-      setCounter(counter - 1);
-    } else {
-      setCounter(content.length);
     }
   };
 
@@ -37,45 +29,40 @@ const Carousel = ({ children }) => {
       } else {
         clearInterval(interval);
       }
-    }, 3000);
+    }, 10000);
     return () => clearInterval(interval);
   });
 
   return (
-    <div className="App">
+    <div className="AppTwo relative">
       <div
-        className="slide"
+        className="Slide w-[532px] max-w-[532px] h-[750px] "
         onMouseEnter={handleMouse}
         onMouseLeave={handleMouse}
       >
         {content.map((item, index) => (
           <div
-            className={counter - 1 === index ? "show" : "not-show"}
+            className={counter - 1 === index ? "Show" : "not-Show"}
             key={index}
           >
             {item}
           </div>
         ))}
-
-        <button className="prev" onClick={handlePre}>
-          &#10094;
-        </button>
-        <button className="next" onClick={handleNext}>
-          &#10095;
-        </button>
       </div>
 
-      <div className="page ">
-        {content.map((item, index) => (
-          <span
-            key={index}
-            className={counter - 1 === index ? "dot active" : "dot"}
-            onClick={() => handlePage(index + 1)}
-          />
-        ))}
+      <div className="absolute bottom-[-10px] left-[48%] ">
+        <div className="Page">
+          {content.map((item, index) => (
+            <span
+              key={index}
+              className={counter - 1 === index ? "Dot Active" : "Dot"}
+              onClick={() => handlePage(index + 1)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Carousel;
+export default HeroCarousel;

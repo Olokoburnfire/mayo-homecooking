@@ -4,10 +4,10 @@ const JoinBlog = () => {
   return (
     <>
       <div className=" max-w-[100vw] w-[100vw] h-auto py-6  flex flex-col bg-banner-texture item-center justify-center gap-5">
-        <h1 className="text-3xl leading-[39px] text-[#000] font-medium text-center">
+        <h1 className="text-3xl leading-[39px] text-[#fff] font-medium text-center">
           JOIN OUR BLOG!
         </h1>
-        <p className="text-xl leading-[26px] text-center  self-center font-normal text-[#000] w-[560px]">
+        <p className="text-xl leading-[26px] text-center  self-center font-normal text-[#fff] w-[560px]">
           Sign up to Mayo’s home cooked blog today and be the first to hear
           about exclusive deals and special offers
         </p>

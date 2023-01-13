@@ -69,7 +69,6 @@ const LoginForm = ({ handleChange }) => {
                   as={TextField}
                   variant="filled"
                   placeholder="Enter Email"
-                  fullWidth
                   required
                   style={inputStyle}
                   label="Email"
@@ -82,7 +81,6 @@ const LoginForm = ({ handleChange }) => {
                   as={TextField}
                   variant="filled"
                   placeholder="Enter Password"
-                  fullWidth
                   required
                   type="password"
                   name="password"
@@ -97,12 +95,7 @@ const LoginForm = ({ handleChange }) => {
                   control={<Checkbox name="remember" color="primary" />}
                   label="Remember My Password"
                 />
-                <button
-                  type="submit"
-                  fullWidth
-                  style={btnstyle}
-                  disabled={isLoading}
-                >
+                <button type="submit" style={btnstyle} disabled={isLoading}>
                   SIGN IN
                 </button>
                 {error && (
